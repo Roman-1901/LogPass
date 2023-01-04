@@ -2,15 +2,23 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class Main {
 
 
-    public static boolean check(String text) {
-        boolean result = false;
-        if (text.matches("[a-zA-z0-9]*") && text.length() <= 20) {
-            result = true;
-        }
-        return result;
+//    public static boolean check(String text) {
+//        boolean result = false;
+//        if (text.matches("[a-zA-Z0-9]*") && text.length() <= 20) {
+//            result = true;
+//        }
+//        return result;
+//    }
+
+    public static boolean check (String text) {
+        String WORD_REGEX = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,20}$";
+        Pattern pl = Pattern.compile(WORD_REGEX);
+        Matcher m = pl.matcher(text);
+        return m.matches();
     }
 
     public static void LogPass(String log, String pass, String confirmPass) {
@@ -40,17 +48,19 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите логин");
-        String login = sc.nextLine();
-        System.out.println("Введите пароль");
-        String password = sc.nextLine();
-        System.out.println("Подтвердите пароль");
-        String confirmPassword = sc.nextLine();
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Введите логин");
+//        String login = sc.nextLine();
+//        System.out.println("Введите пароль");
+//        String password = sc.nextLine();
+//        System.out.println("Подтвердите пароль");
+//        String confirmPassword = sc.nextLine();
+//
+//
+//        LogPass(login, password, confirmPassword);
 
-
-        LogPass(login, password, confirmPassword);
-
+        System.out.println(check("Password1")); //выдаст true
+        System.out.println(check("password1")); //выдаст false
 
     }
 
