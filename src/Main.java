@@ -15,6 +15,23 @@ public class Main {
         String confirmPassword =  sc3.nextLine();
 
 
-        LogPas user = new LogPas(login, password, confirmPassword);
+        LogPass(login, password, confirmPassword);
+
     }
+
+    public static void LogPass(String log, String pass, String confirmPass) {
+        String login = "Dimon123";
+        String password = "Password123";
+        if (!log.equals(login) || !pass.equals(password) || !confirmPass.equals(password)) {
+            try {
+                throw new RuntimeException("Неверно указаны логин или пароль");
+            } catch (RuntimeException e) {
+                System.out.println(e.getMessage());
+            }
+        } else {
+            System.out.println("Данные введены корректно");
+        }
+    }
+
 }
+
