@@ -7,7 +7,7 @@ public class LogPas {
         this.password = "Password123";
         if (!login.equals(this.login) || !password.equals(this.password) || !confirmPassword.equals(this.password)) {
             try {
-                throw new RuntimeException("Неверно казаны логин или пароль");
+                throw new RuntimeException("Неверно указаны логин или пароль");
             } catch (RuntimeException e) {
                 System.out.println(e.getMessage());
             }
