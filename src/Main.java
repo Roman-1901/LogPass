@@ -38,15 +38,13 @@ public class Main {
     public static void main(String[] args) {
         boolean checkLog;
         boolean checkPass;
-        Scanner sc1 = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Введите логин");
-        String login =  sc1.nextLine();
-        Scanner sc2= new Scanner(System.in);
+        String login =  sc.nextLine();
         System.out.println("Введите пароль");
-        String password =  sc2.nextLine();
-        Scanner sc3= new Scanner(System.in);
+        String password =  sc.nextLine();
         System.out.println("Подтвердите пароль");
-        String confirmPassword =  sc3.nextLine();
+        String confirmPassword = sc.nextLine();
 
 
         checkLog = check(login);
