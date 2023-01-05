@@ -8,7 +8,7 @@ public class Main {
 
     private static boolean checkPass(String password) {
         boolean result = false;
-        if (password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,20}$") && password.length() <= 20) {
+        if (password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,20}$")) {
             result = true;
         }
         return result;
