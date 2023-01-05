@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class Main {
 
 
-    public static boolean checkPass(String password) {
+    private static boolean checkPass(String password) {
         boolean result = false;
         if (password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,20}$") && password.length() <= 20) {
             result = true;
@@ -14,9 +14,7 @@ public class Main {
         return result;
     }
 
-
-
-    public static boolean checkLog(String login) {
+    private static boolean checkLog(String login) {
         boolean result = false;
         if (login.matches("[a-zA-Z0-9]*") && login.length() <= 20) {
             result = true;
