@@ -6,20 +6,15 @@ import java.util.regex.Pattern;
 public class Main {
 
 
-//    public static boolean check(String text) {
-//        boolean result = false;
-//        if (text.matches("[a-zA-Z0-9]*") && text.length() <= 20) {
-//            result = true;
-//        }
-//        return result;
-//    }
-
-    public static boolean check (String text) {
-        String WORD_REGEX = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,20}$";
-        Pattern pl = Pattern.compile(WORD_REGEX);
-        Matcher m = pl.matcher(text);
-        return m.matches();
+    public static boolean check(String text) {
+        boolean result = false;
+        if (text.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,20}$") && text.length() <= 20) {
+            result = true;
+        }
+        return result;
     }
+
+
 
     public static void LogPass(String log, String pass, String confirmPass) {
         boolean checkLog;
