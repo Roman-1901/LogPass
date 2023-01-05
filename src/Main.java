@@ -6,9 +6,9 @@ import java.util.regex.Pattern;
 public class Main {
 
 
-    public static boolean check(String text) {
+    public static boolean checkPass(String password) {
         boolean result = false;
-        if (text.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,20}$") && text.length() <= 20) {
+        if (password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,20}$") && password.length() <= 20) {
             result = true;
         }
         return result;
@@ -16,11 +16,19 @@ public class Main {
 
 
 
+    public static boolean checkLog(String login) {
+        boolean result = false;
+        if (login.matches("[a-zA-Z0-9]*") && login.length() <= 20) {
+            result = true;
+        }
+        return result;
+    }
+
     public static void LogPass(String log, String pass, String confirmPass) {
         boolean checkLog;
         boolean checkPass;
-        checkLog = check(log);
-        checkPass = check(pass);
+        checkLog = checkLog(log);
+        checkPass = checkPass(pass);
         if (checkLog && checkPass) {
             if (confirmPass.equals(pass)) {
                 System.out.println("Данные введены корректно");
@@ -43,19 +51,18 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("Введите логин");
-//        String login = sc.nextLine();
-//        System.out.println("Введите пароль");
-//        String password = sc.nextLine();
-//        System.out.println("Подтвердите пароль");
-//        String confirmPassword = sc.nextLine();
-//
-//
-//        LogPass(login, password, confirmPassword);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите логин");
+        String login = sc.nextLine();
+        System.out.println("Введите пароль");
+        String password = sc.nextLine();
+        System.out.println("Подтвердите пароль");
+        String confirmPassword = sc.nextLine();
 
-        System.out.println(check("Password1")); //выдаст true
-        System.out.println(check("password1")); //выдаст false
+
+        LogPass(login, password, confirmPassword);
+
+
 
     }
 
